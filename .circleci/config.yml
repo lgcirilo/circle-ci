@@ -15,6 +15,10 @@ jobs:
           name: Print the Current Time
           command: date
           
+      - run:
+          name: sleep for job one
+          command: sleep 10
+          
           
   two:
     docker:
