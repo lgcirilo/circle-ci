@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  one:
     docker:
       - image: debian:stretch
 
@@ -8,10 +8,34 @@ jobs:
       - checkout
 
       - run:
-          name: Greeting
-          command: notacommand
+          name: Greeting job one
+          command: echo running first job
+          
+      - run:
+          name: Print the Current Time
+          command: date
+          command: sleep 10
+          
+          
+  two:
+    docker:
+      - image: debian:stretch
+
+    steps:
+      - checkout
+
+      - run:
+          name: Greeting job two
+          command: echo running second job
 
       - run:
           name: Print the Current Time
           command: date
+          command: sleep 10
           
+workflows:
+   version: 2
+   one_and_two:
+     jobs:
+       - one
+       - two
