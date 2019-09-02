@@ -14,7 +14,6 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
-          command: sleep 10
           
           
   two:
@@ -31,7 +30,6 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
-          command: sleep 10
           
 workflows:
    version: 2
